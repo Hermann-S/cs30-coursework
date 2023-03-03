@@ -2,5 +2,6 @@
 
 ## Demos
 - [movingRectangle](movingRectangle)
+- [GenerativeArt](GenerativeArt)
 
 ## Projects
