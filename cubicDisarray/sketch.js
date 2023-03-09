@@ -10,7 +10,7 @@ function setup() {
 
   for (let y = 0; y < height; y += 50) {
     for (let x = 0; x < width; x +=50){
-      spawnBox(x, y, 50, random(y / mouseY));
+      spawnBox(x, y, 50, random(y / 2));
     }
   }
 }
