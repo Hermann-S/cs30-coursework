@@ -5,6 +5,7 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let shapes = [];
 let x1;
 let y1;
 let dx;
@@ -33,9 +34,26 @@ function keyPressed() {
   }
 }
 
+
+
+
 function mousePressed() {
   if (dist(mouseX, mouseY, x1, y1) < 25){
     x1 = random(width);
     y1 = random(height);
+  }
+}
+
+function moveShapes() {
+  for (let i = 0; i < shapes.length; i++) {
+    shapes[i].x += shapes[i].dx;
+    shapes[i].y += shapes[i].dy;
+  }
+}
+
+function displayShapes() {
+  for ( let i = 0; i < shapes.length; i++) {
+    fill(shapes[i].theColor);
+    circle(shapes[i].x, shapes[i].y, shapes[i].diameter);
   }
 }
