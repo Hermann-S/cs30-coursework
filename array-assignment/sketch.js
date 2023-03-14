@@ -19,7 +19,10 @@ function setup() {
 
 function draw() {
   background(0);
-  circle(x1, y1, 50);
+  moveShapes();
+  displayShapes();
+  // circle(x1, y1, 50);
+  // fill(255);
 }
 
 function keyPressed() {
@@ -44,6 +47,10 @@ function mousePressed() {
   }
 }
 
+// function mousePressed() {
+//   spawnBall(mouseX, mouseY);
+// }
+
 function moveShapes() {
   for (let i = 0; i < shapes.length; i++) {
     shapes[i].x += shapes[i].dx;
@@ -56,4 +63,16 @@ function displayShapes() {
     fill(shapes[i].theColor);
     circle(shapes[i].x, shapes[i].y, shapes[i].diameter);
   }
+}
+
+function spawnBall(tempX,tempY) {
+  let newBall = {
+    x: tempX,
+    y: tempY,
+    dx: random(-5, 5),
+    dy: random(-5, 5),
+    diameter: random(25, 100),
+    theColor: color(255)
+  };
+  shapes.push(newBall);
 }
