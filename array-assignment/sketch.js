@@ -5,35 +5,90 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-let shapes = [];
-let x = width / 3;
-let y1;
-let dx;
-let dy;
+
+
+
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  // x1 = random(height);
-  // y1 = random(width);
+  createCanvas(500, 400);
+  textSize(18);
+   
+  text("Move the mouse to see the rectangle"
+        + " align to it.", 20, 30);
 }
-
+   
 function draw() {
-  background(0);
-  translate(width / 3, height / 1.25);
-  circle(0, 0, 50);
-  fill(255);
-  // moveShapes();
-  // displayShapes();
-  // circle(x1, y1, 50);
-  // fill(255);
+  clear();
+  text("Move the mouse to see the rectangle"
+        + " align with the mouse.", 20, 30);
+   
+  // Move the rectangle to the
+  // middle of the screen
+  translate(width / 2, height / 2);
+   
+  // Use the atan2() function to find
+  // the value according to the mouse
+  // coordinates
+  let adjustedValue = atan2(mouseY - height / 2, mouseX - width / 2);
+  rotate(adjustedValue);
+   
+  // Draw a rectangle
+  rect(0, 0, 50, 25);
+   
+  text(adjustedValue.toFixed(4), 100, 20);
 }
 
 
-function keyPressed() {
-  if (keyCode === 68){
-    x += 5;
-  }
-}
+// let shapes = [];
+// let x = width / 3;
+// let y1;
+// let dx;
+// let dy;
+// // angleMode[DEGREES];
+
+// function setup() {
+//   createCanvas(windowWidth, windowHeight);
+//   // x1 = random(height);
+//   // y1 = random(width);
+// }
+
+// function draw() {
+//   background(0);
+//   translate(width / 3, height / 1.25);
+//   // let a = atan2( mouseY - height / 2, mouseX - width / 2);
+//   // rotate(a);
+//   // rectMode(CENTER);
+//   // rect(0, 0, 60, 200);
+//   fill(255);
+//   // moveShapes();
+//   // displayShapes();
+//   // circle(x1, y1, 50);
+//   // fill(255);
+// }
+
+
+// function keyPressed() {
+//   if (keyCode === 68){
+//     x += 5;
+//   }
+// }
+
+// function mousePressed() {
+//   spawnBall(0, 0);
+// }
+
+// function spawnBall() {
+//   let x2 = 0;
+//   let y2 = 0;
+//   let a = atan2( mouseY - height / 2, mouseX - width / 2);
+//   rotate(a);
+//   rectMode(CENTER);
+//   x2 += a;
+//   y2 += a;
+//   circle(0, 0, 10);
+//   fill(255);
+// }
+
 // function keyPressed() {
 //   if (keyCode === 65){
 //     fill(255, 0, 0);
