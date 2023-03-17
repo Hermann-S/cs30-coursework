@@ -35,7 +35,7 @@ function draw() {
   // Draw a rectangle
   rect(0, 0, 50, 25);
    
-  text(adjustedValue.toFixed(4), 100, 20);
+  // text(adjustedValue.toFixed(4), 100, 20);
 }
 
 
