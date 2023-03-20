@@ -9,73 +9,82 @@
 
 
 
+// function setup() {
+//   createCanvas(windowWidth, windowHeight);
+//   textSize(18);
+   
+//   text("Move the mouse to see the rectangle"
+//         + " align to it.", 20, 30);
+// }
+   
+// function draw() {
+//   clear();
+//   text("Move the mouse to see the rectangle"
+//         + " align with the mouse.", 20, 30);
+   
+//   // Move the rectangle to the
+//   // middle of the screen
+//   translate(width / 2, height / 1.25);
+   
+//   // Use the atan2() function to find
+//   // the value according to the mouse
+//   // coordinates
+//   let adjustedValue = atan2(mouseY - height / 1.25, mouseX - width / 2);
+//   rotate(adjustedValue);
+   
+//   // Draw a rectangle
+//   rect(0, 0, 50, 25);
+   
+// }
+
+
+let shapes = [];
+let x = width / 3;
+let y1;
+let x1;
+let dx;
+let dy;
+// angleMode[DEGREES];
+
 function setup() {
-  createCanvas(500, 400);
-  textSize(18);
-   
-  text("Move the mouse to see the rectangle"
-        + " align to it.", 20, 30);
+  createCanvas(windowWidth, windowHeight);
+  // x1 = random(height);
+  // y1 = random(width);
 }
-   
+
 function draw() {
-  clear();
-  text("Move the mouse to see the rectangle"
-        + " align with the mouse.", 20, 30);
-   
-  // Move the rectangle to the
-  // middle of the screen
-  translate(width / 2, height / 2);
-   
+  background(0);  
+  translate(width / 2, height / 1.25);
+
   // Use the atan2() function to find
   // the value according to the mouse
   // coordinates
-  let adjustedValue = atan2(mouseY - height / 2, mouseX - width / 2);
+  let adjustedValue = atan2(mouseY - height / 1.25, mouseX - width / 2);
   rotate(adjustedValue);
    
-  // Draw a rectangle
+  //  Draw a rectangle
   rect(0, 0, 50, 25);
-   
-  // text(adjustedValue.toFixed(4), 100, 20);
+  // translate(width / 2, height / 1.25);
+  // let a = atan2( mouseY - height / 1.25, mouseX - width / 2);
+  // rotate(a);
+  // rect(0, 0, 60, 200);
+  // fill(255);
+  moveShapes();
+  displayShapes();
+  // circle(x1, y1, 50);
+  fill(255);
 }
 
 
-// let shapes = [];
-// let x = width / 3;
-// let y1;
-// let dx;
-// let dy;
-// // angleMode[DEGREES];
+function keyPressed() {
+  if (keyCode === 68){
+    x += 5;
+  }
+}
 
-// function setup() {
-//   createCanvas(windowWidth, windowHeight);
-//   // x1 = random(height);
-//   // y1 = random(width);
-// }
-
-// function draw() {
-//   background(0);
-//   translate(width / 3, height / 1.25);
-//   // let a = atan2( mouseY - height / 2, mouseX - width / 2);
-//   // rotate(a);
-//   // rectMode(CENTER);
-//   // rect(0, 0, 60, 200);
-//   fill(255);
-//   // moveShapes();
-//   // displayShapes();
-//   // circle(x1, y1, 50);
-//   // fill(255);
-// }
-
-
-// function keyPressed() {
-//   if (keyCode === 68){
-//     x += 5;
-//   }
-// }
-
-// function mousePressed() {
-//   spawnBall(0, 0);
-// }
+function mousePressed() {
+  spawnBall(0, 0);
+}
 
 // function spawnBall() {
 //   let x2 = 0;
@@ -111,32 +120,32 @@ function draw() {
 //   }
 // }
 
-// // function mousePressed() {
-// //   spawnBall(mouseX, mouseY);
-// // }
-
-// function moveShapes() {
-//   for (let i = 0; i < shapes.length; i++) {
-//     shapes[i].x += shapes[i].dx;
-//     shapes[i].y += shapes[i].dy;
-//   }
+// function mousePressed() {
+//   spawnBall(mouseX, mouseY);
 // }
 
-// function displayShapes() {
-//   for ( let i = 0; i < shapes.length; i++) {
-//     fill(shapes[i].theColor);
-//     circle(shapes[i].x, shapes[i].y, shapes[i].diameter);
-//   }
-// }
+function moveShapes() {
+  for (let i = 0; i < shapes.length; i++) {
+    shapes[i].x += shapes[i].dx;
+    shapes[i].y += shapes[i].dy;
+  }
+}
 
-// function spawnBall(tempX,tempY) {
-//   let newBall = {
-//     x: tempX,
-//     y: tempY,
-//     dx: random(-5, 5),
-//     dy: random(-5, 5),
-//     diameter: random(25, 100),
-//     theColor: color(255)
-//   };
-//   shapes.push(newBall);
-// }
+function displayShapes() {
+  for ( let i = 0; i < shapes.length; i++) {
+    fill(shapes[i].theColor);
+    circle(shapes[i].x, shapes[i].y, shapes[i].diameter);
+  }
+}
+
+function spawnBall(tempX,tempY) {
+  let newBall = {
+    x: tempX,
+    y: tempY,
+    dx: random(-5, 5),
+    dy: random(-5, 5),
+    diameter: random(25, 100),
+    theColor: color(255)
+  };
+  shapes.push(newBall);
+}
