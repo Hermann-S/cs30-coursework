@@ -1,5 +1,5 @@
-// Project Title
-// Your Name
+// Array Assignment
+// Hermann Stirrett
 // Date
 //
 // Extra for Experts:
@@ -26,23 +26,27 @@ function setup() {
 
 function draw() {
   background(220);
-  // displayGrid(grid);
-  checkersBoard();
+  displayGrid(grid);
+  piece();
+  // checkersBoard();
 }
 
-// function displayGrid(grid) {
-//   for (let y = 0; y < ROWS; y++) {
-//     for (let x = 0; x < COLS; x++) {
-//       if (grid[y][x] === 0) {
-//         fill("orange");
-//       }
-//       if (grid[y][x] === 1) {
-//         fill("blue");
-//       }
-//       rect(x*cellSize, y*cellSize, cellSize, cellSize);
-//     }
-//   }
-// }
+function displayGrid(grid) {
+  for (let y = 0; y < ROWS; y++) {
+    for (let x = 0; x < COLS; x++) {
+      if (grid[y][x] === 0) {
+        fill("red");
+        circle(x, y, 50);
+      }
+      if (isBlack) {
+        fill("black");
+      }
+      rect(x*cellSize, y*cellSize, cellSize, cellSize);
+      isBlack = !isBlack;
+    }
+    isBlack = !isBlack;
+  }
+}
 
 function createEmpty2dArray(ROWS, COLS) {
   let newGrid = [];
@@ -55,26 +59,38 @@ function createEmpty2dArray(ROWS, COLS) {
   return newGrid;
 }
 
-function checkersBoard() {
-  let cellSize;
-  if (width >= height) {
-    cellSize = height/8;
-  }
-  else {
-    cellSize = width/8;
-  }
-  
-  for (let x=0; x<8; x++) {
-    for (let y=0; y<8; y++) {
-      if (isBlack) {
-        fill("black");
+function piece() {
+  if (ROWS <= 2) {
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+        if (grid[y][x] === 0) {
+          circle(x, height / 2, 10, 255);
+        }
       }
-      else {
-        fill("red");
-      }
-      rect(x*cellSize, y*cellSize, cellSize, cellSize);
-      isBlack = !isBlack;
     }
-    isBlack = !isBlack;
   }
 }
+
+// function checkersBoard() {
+//   let cellSize;
+//   if (width >= height) {
+//     cellSize = height/8;
+//   }
+//   else {
+//     cellSize = width/8;
+//   }
+  
+//   for (let x=0; x<8; x++) {
+//     for (let y=0; y<8; y++) {
+//       if (isBlack) {
+//         fill("black");
+//       }
+//       else {
+//         fill("red");
+//       }
+//       rect(x*cellSize, y*cellSize, cellSize, cellSize);
+//       isBlack = !isBlack;
+//     }
+//     isBlack = !isBlack;
+//   }
+// }
