@@ -25,7 +25,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(50);
   displayGrid(grid);
   piece();
   // checkersBoard();
