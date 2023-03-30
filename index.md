@@ -10,6 +10,8 @@
 - [Grid Demo](2d-grid)
 - [Colour Game](colour-game)
 - [Game of Life](gameOfLife)
+- [Character in Grid](characterGriddy)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
+- [2D Array Assignment](2d-array-assignment)

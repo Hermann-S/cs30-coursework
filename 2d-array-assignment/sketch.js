@@ -5,15 +5,26 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+
+let grid = [[0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0],
+            [0, 1, 0, 1, 0, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0]];
+
 const ROWS = 8;
 const COLS = 8;
-let grid;
+// let grid;
 let cellSize;
 let isBlack = false;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  grid = createEmpty2dArray(ROWS, COLS);
+  // grid = createEmpty2dArray(ROWS, COLS);
 
   // fill the largest square area possible
   if (width < height) {
@@ -60,12 +71,11 @@ function createEmpty2dArray(ROWS, COLS) {
 }
 
 function piece() {
-  if (ROWS <= 2) {
-    for (let y = 0; y < ROWS; y++) {
-      for (let x = 0; x < COLS; x++) {
-        if (grid[y][x] === 0) {
-          circle(x, height / 2, 10, 255);
-        }
+  for (let y = 0; y < ROWS; y++) {
+    for (let x = 0; x < COLS; x++) {
+      if (grid[y][x] === 1) {
+        circle(grid[y][x], grid[y][x], 20);
+        fill("white");
       }
     }
   }
