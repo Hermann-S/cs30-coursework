@@ -11,10 +11,9 @@ let grid = [[0, 1, 0, 1, 0, 1, 0, 1],
             [0, 1, 0, 1, 0, 1, 0, 1],
             [0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0]];
+            [2, 0, 2, 0, 2, 0, 2, 0],
+            [0, 2, 0, 2, 0, 2, 0, 2],
+            [2, 0, 2, 0, 2, 0, 2, 0]];
 
 const ROWS = 8;
 const COLS = 8;
@@ -47,7 +46,6 @@ function displayGrid(grid) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
         fill("red");
-        circle(x, y, 50);
       }
       if (isBlack) {
         fill("black");
@@ -74,13 +72,21 @@ function piece() {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 1) {
-        circle(grid[y][x], grid[y][x], 20);
-        fill("white");
+        fill(200);
+        circle(x * cellSize + cellSize / 2, y * cellSize + cellSize / 2, 50);
+      }
+      else if (grid[y][x] === 2) {
+        fill(200, 0, 0);
+        circle(x * cellSize + cellSize / 2, y * cellSize + cellSize / 2, 50);
       }
     }
   }
 }
 
+
+function mousePressed() {
+  
+}
 // function checkersBoard() {
 //   let cellSize;
 //   if (width >= height) {
