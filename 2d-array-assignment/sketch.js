@@ -6,14 +6,15 @@
 // - describe what you did to take this project "above and beyond"
 
 
-let grid = [[0, 1, 0, 1, 0, 1, 0, 1],
-            [1, 0, 1, 0, 1, 0, 1, 0],
-            [0, 1, 0, 1, 0, 1, 0, 1],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [2, 0, 2, 0, 2, 0, 2, 0],
-            [0, 2, 0, 2, 0, 2, 0, 2],
-            [2, 0, 2, 0, 2, 0, 2, 0]];
+let grid = [
+  [0, 1, 0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 1, 0],
+  [0, 1, 0, 1, 0, 1, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [2, 0, 2, 0, 2, 0, 2, 0],
+  [0, 2, 0, 2, 0, 2, 0, 2],
+  [2, 0, 2, 0, 2, 0, 2, 0]];
 
 const ROWS = 8;
 const COLS = 8;
@@ -57,16 +58,16 @@ function displayGrid(grid) {
   }
 }
 
-function createEmpty2dArray(ROWS, COLS) {
-  let newGrid = [];
-  for (let y = 0; y < ROWS; y++) {
-    newGrid.push([]);
-    for (let x = 0; x < COLS; x++) {
-      newGrid[y].push(0);
-    }
-  }
-  return newGrid;
-}
+// function createEmpty2dArray(ROWS, COLS) {
+//   let newGrid = [];
+//   for (let y = 0; y < ROWS; y++) {
+//     newGrid.push([]);
+//     for (let x = 0; x < COLS; x++) {
+//       newGrid[y].push(0);
+//     }
+//   }
+//   return newGrid;
+// }
 
 function piece() {
   for (let y = 0; y < ROWS; y++) {
@@ -83,9 +84,13 @@ function piece() {
   }
 }
 
-
+// either do 7 * cellsize or look at how it was done on game of life
 function mousePressed() {
-  
+  console.log(dist(mouseX, mouseY, grid[7][0], grid[7][0]));
+  if (dist(mouseX, mouseY, grid[7][0], grid[7][0]) < 25) {
+    circle(width / 2, height / 2, 75);
+    console.log("HERE")
+  }
 }
 // function checkersBoard() {
 //   let cellSize;
