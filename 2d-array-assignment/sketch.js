@@ -86,12 +86,34 @@ function piece() {
 
 // either do 7 * cellsize or look at how it was done on game of life
 function mousePressed() {
-  console.log(dist(mouseX, mouseY, grid[7][0], grid[7][0]));
-  if (dist(mouseX, mouseY, grid[7][0], grid[7][0]) < 25) {
-    circle(width / 2, height / 2, 75);
-    console.log("HERE")
+  let mouseClicked;
+  let x = Math.floor(mouseX/cellSize);
+  let y = Math.floor(mouseY/cellSize);
+
+  // console.log(dist(mouseX, mouseY, grid[7][0], grid[7][0]));
+  // if (dist(mouseX, mouseY, grid[x][y], grid[x][y]) < 25) {
+  //   circle(width / 2, height / 2, 75);
+  //   console.log("HERE");
+  if (x >= 0 && x < COLS && y >= 0 && y < ROWS) {
+    if (grid[y][x] === 2) {
+      if (mouseClicked(grid[x][y] <= 1, grid[x][y])) {
+        grid[x][y] = 2;
+      }
+    }
+    else if (grid[y][x] === 1) {
+      if (mouseClicked(grid[x][y] === 2 ||mouseClicked(grid[x][y] === 0, grid[x][y]))) {
+        grid[x][y] = 1;
+      }
+    }
   }
 }
+
+
+function mouseClicked() {
+  
+}
+//   }
+// }
 // function checkersBoard() {
 //   let cellSize;
 //   if (width >= height) {
