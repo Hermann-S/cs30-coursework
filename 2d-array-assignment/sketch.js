@@ -7,14 +7,14 @@
 
 
 let grid = [
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [1, 0, 1, 0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0, 1, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0],
-  [2, 0, 2, 0, 2, 0, 2, 0],
-  [0, 2, 0, 2, 0, 2, 0, 2],
-  [2, 0, 2, 0, 2, 0, 2, 0]];
+  [3, 1, 3, 1, 3, 1, 3, 1],
+  [1, 3, 1, 3, 1, 3, 1, 3],
+  [3, 1, 3, 1, 3, 1, 3, 1],
+  [0, 3, 0, 3, 0, 3, 0, 3],
+  [3, 0, 3, 0, 3, 0, 3, 0],
+  [2, 3, 2, 3, 2, 3, 2, 3],
+  [3, 2, 3, 2, 3, 2, 3, 2],
+  [2, 3, 2, 3, 2, 3, 2, 3]];
 
 const ROWS = 8;
 const COLS = 8;
@@ -45,7 +45,7 @@ function draw() {
 function displayGrid(grid) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
-      if (grid[y][x] === 0) {
+      if (grid[y][x] === 3) {
         fill("red");
       }
       if (isBlack) {
@@ -96,21 +96,30 @@ function mousePressed() {
   //   console.log("HERE");
   if (x >= 0 && x < COLS && y >= 0 && y < ROWS) {
     if (grid[y][x] === 2) {
-      if (mouseClicked(grid[x][y] <= 1, grid[x][y])) {
+      if (mouseClicked()){//grid[x][y] <= 1, grid[x][y])) {
         grid[x][y] = 2;
       }
     }
     else if (grid[y][x] === 1) {
-      if (mouseClicked(grid[x][y] === 2 ||mouseClicked(grid[x][y] === 0, grid[x][y]))) {
+      if (mouseClicked()) {//grid[x][y] === 2 ||mouseClicked(grid[x][y] === 0, grid[x][y]))) {
         grid[x][y] = 1;
       }
     }
   }
+  console.log;
 }
 
 
 function mouseClicked() {
-  
+  let x = Math.floor(mouseX/cellSize);
+  let y = Math.floor(mouseY/cellSize);
+
+  if (grid[x][y] <= 1) {
+    grid[x][y] = 1;
+  }
+  else if (grid[x][y] === 2 || grid[x][y] === 0) {
+    grid[x][y] = 2;
+  }
 }
 //   }
 // }
