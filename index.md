@@ -11,6 +11,7 @@
 - [Colour Game](colour-game)
 - [Game of Life](gameOfLife)
 - [Character in Grid](characterGriddy)
+- [Walker OOP](walker)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
