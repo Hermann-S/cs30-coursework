@@ -12,6 +12,7 @@
 - [Game of Life](gameOfLife)
 - [Character in Grid](characterGriddy)
 - [Walker OOP](walker)
+- [Fireworks OOP](fireworks)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
