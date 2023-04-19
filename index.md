@@ -13,6 +13,7 @@
 - [Character in Grid](characterGriddy)
 - [Walker OOP](walker)
 - [Fireworks OOP](fireworks)
+- [Ball Array OOP](ballArray)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
