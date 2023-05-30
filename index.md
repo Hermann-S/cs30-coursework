@@ -15,6 +15,7 @@
 - [Fireworks OOP](fireworks)
 - [Ball Array OOP](ballArray)
 - [Using Timers](timersPog)
+- [Fractal Circles](fractalCircles)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
