@@ -16,6 +16,7 @@
 - [Ball Array OOP](ballArray)
 - [Using Timers](timersPog)
 - [Fractal Circles](fractalCircles)
+- [Sierpinski triangle](sierpinskiTriangle)
 
 ## Projects
 - [Arrays and Object Notation](array-assignment) 
